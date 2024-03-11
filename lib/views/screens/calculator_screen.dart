@@ -25,8 +25,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
 
   void deleteLastCharacter() {
     setState(() {
-      print('display length : ${_calcDisplayController.text.length}');
-      if (firstNumber.length > 1) {
+      if (firstNumber.length <= 1 && operator.isEmpty) {
+        clearDisplay();
+      } else {
         if (secondNumber.isNotEmpty) {
           secondNumber = secondNumber.substring(0, secondNumber.length - 1);
         } else if (operator.isNotEmpty && secondNumber.isEmpty) {
@@ -38,8 +39,6 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         }
 
         _calcDisplayController.text = '$firstNumber $operator $secondNumber';
-      } else if (firstNumber.length == 1) {
-        clearDisplay();
       }
     });
   }
@@ -51,6 +50,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           operator = text;
         } else if (firstNumber.isEmpty && text == '-') {
           firstNumber = '-';
+        } else if (firstNumber.isEmpty && text == '+') {
+          firstNumber = '0';
+          operator = '+';
         }
       } else {
         if (operator.isEmpty) {
