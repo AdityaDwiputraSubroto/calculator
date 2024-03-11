@@ -6,23 +6,28 @@ class ButtonCalc extends StatelessWidget {
   final String buttonColor;
   final String textColor;
   final String buttonText;
-  const ButtonCalc({
-    super.key,
-    required this.buttonText,
-    this.fontSize = 45,
-    this.buttonColor = ColorsCalc.green,
-    this.textColor = ColorsCalc.white,
-  });
+  final double height;
+  final double width;
+  final VoidCallback onPressed;
+
+  const ButtonCalc(
+      {super.key,
+      required this.buttonText,
+      this.fontSize = 30,
+      this.buttonColor = ColorsCalc.green,
+      this.textColor = ColorsCalc.white,
+      this.height = 80,
+      required this.onPressed,
+      this.width = 100});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {
-        // Add your onPressed callback function here
-      },
+      onPressed: onPressed,
       style: ElevatedButton.styleFrom(
           backgroundColor: ColorsCalc.hexToColor(buttonColor),
-          shape: CircleBorder() // Set the background color to green
+          shape: CircleBorder(),
+          fixedSize: Size(width, height) // Set the background color to green
           ),
       child: Text(
         buttonText,
