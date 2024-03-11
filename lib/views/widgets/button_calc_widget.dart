@@ -9,6 +9,7 @@ class ButtonCalc extends StatelessWidget {
   final double height;
   final double width;
   final VoidCallback onPressed;
+  final OutlinedBorder shape;
 
   const ButtonCalc(
       {super.key,
@@ -17,6 +18,7 @@ class ButtonCalc extends StatelessWidget {
       this.buttonColor = ColorsCalc.green,
       this.textColor = ColorsCalc.white,
       this.height = 80,
+      this.shape = const CircleBorder(),
       required this.onPressed,
       this.width = 100});
 
@@ -26,7 +28,7 @@ class ButtonCalc extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
           backgroundColor: ColorsCalc.hexToColor(buttonColor),
-          shape: CircleBorder(),
+          shape: shape,
           fixedSize: Size(width, height) // Set the background color to green
           ),
       child: Text(
