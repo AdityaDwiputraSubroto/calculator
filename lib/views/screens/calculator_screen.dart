@@ -13,7 +13,6 @@ class CalculatorScreen extends StatefulWidget {
 
 class _CalculatorScreenState extends State<CalculatorScreen> {
   TextEditingController _calcDisplayController = TextEditingController();
-  ScrollController _scrollController = ScrollController();
   String firstNumber = '';
   String operator = '';
   String secondNumber = '';
