@@ -97,7 +97,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     }
 
     setState(() {
-      if (result % 2 == 0) {
+      if (result == result.toInt()) {
         _calcDisplayController.text = result.toInt().toString();
       } else {
         _calcDisplayController.text = result.toString();
@@ -116,6 +116,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           'Calculator',
           style: TextStyle(color: Colors.white),
         ),
+        iconTheme:
+            IconThemeData(color: ColorsCalc.hexToColor(ColorsCalc.white)),
         backgroundColor: ColorsCalc.hexToColor(ColorsCalc.green),
       ),
       body: Column(
