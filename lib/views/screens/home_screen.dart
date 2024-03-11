@@ -1,0 +1,71 @@
+import 'package:calculator/utils/colors.dart';
+import 'package:calculator/views/screens/calculator_screen.dart';
+import 'package:calculator/views/screens/ganjil_genap_screen.dart';
+import 'package:calculator/views/widgets/button_calc_widget.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'Home',
+            style: TextStyle(color: Colors.white),
+          ),
+          iconTheme:
+              IconThemeData(color: ColorsCalc.hexToColor(ColorsCalc.white)),
+          backgroundColor: ColorsCalc.hexToColor(ColorsCalc.green),
+        ),
+        body: Container(
+          alignment: Alignment.center,
+          child: Column(
+            children: [
+              SizedBox(
+                height: 200,
+              ),
+              Text(
+                'Choose Menu',
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 60,
+              ),
+              ButtonCalc(
+                  buttonText: 'Calculator',
+                  width: 300,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(80)),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return CalculatorScreen();
+                    }));
+                  }),
+              SizedBox(
+                height: 30,
+              ),
+              ButtonCalc(
+                  buttonText: 'Ganjil / Genap',
+                  width: 300,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(80)),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return GanjilGenapScreen();
+                    }));
+                  })
+            ],
+          ),
+        ));
+  }
+}
