@@ -16,6 +16,10 @@ class _DataKelompokScreenState extends State<DataKelompokScreen> {
       'name': 'Nuriyatus Sholihah',
       'nim': '123210129',
     },
+    {
+      'name': 'Nicholas Gendy Putra Mahardika',
+      'nim': '123210017',
+    },
   ];
 
   @override
