@@ -46,7 +46,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   void updateDisplay(String text) {
     setState(() {
       if (text == '+' || text == '-') {
-        if (firstNumber.isNotEmpty && secondNumber.isEmpty) {
+        if (firstNumber.isNotEmpty &&
+            secondNumber.isEmpty &&
+            firstNumber != '-') {
           operator = text;
         } else if (firstNumber.isEmpty && text == '-') {
           firstNumber = '-';
