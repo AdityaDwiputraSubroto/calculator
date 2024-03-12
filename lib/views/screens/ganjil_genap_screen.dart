@@ -38,8 +38,11 @@ class _GanjilGenapScreenState extends State<GanjilGenapScreen> {
 
   void updateDisplay(String text) {
     setState(() {
-      number += text;
-
+      if (number == '0') {
+        number = text;
+      } else {
+        number += text;
+      }
       _calcDisplayController.text = '$number';
     });
   }
