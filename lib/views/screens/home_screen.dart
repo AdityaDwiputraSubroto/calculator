@@ -1,8 +1,9 @@
 import 'package:calculator/utils/colors.dart';
+import 'package:calculator/views/screens/Loginpage.dart';
 import 'package:calculator/views/screens/calculator_screen.dart';
+import 'package:calculator/views/screens/data_kelompok_screen.dart';
 import 'package:calculator/views/screens/ganjil_genap_screen.dart';
 import 'package:calculator/views/widgets/button_calc_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -30,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             children: [
               SizedBox(
-                height: 200,
+                height: 120,
               ),
               Text(
                 'Choose Menu',
@@ -62,6 +63,35 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
                       return GanjilGenapScreen();
+                    }));
+                  }),
+              SizedBox(
+                height: 30,
+              ),
+              ButtonCalc(
+                  buttonText: 'Data Kelompok',
+                  width: 300,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(80)),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return DataKelompokScreen();
+                    }));
+                  }),
+              SizedBox(
+                height: 30,
+              ),
+              ButtonCalc(
+                  buttonText: 'Logout',
+                  buttonColor: ColorsCalc.orange,
+                  width: 300,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(80)),
+                  onPressed: () {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) {
+                      return Loginpage();
                     }));
                   })
             ],
