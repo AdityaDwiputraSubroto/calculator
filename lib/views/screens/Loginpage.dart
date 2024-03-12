@@ -162,7 +162,8 @@ class _LoginpageState extends State<Loginpage> {
           String text = "Login Sukses";
 
           if ((username == "nuriya" && password == "123210129") ||
-              (username == "aditya" && password == "123210053")) {
+              (username == "aditya" && password == "123210053") ||
+              (username == "gendy" && password == "123210017")) {
             setState(() {
               isError = false;
             });
