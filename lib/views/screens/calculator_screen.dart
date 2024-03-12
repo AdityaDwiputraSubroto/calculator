@@ -134,9 +134,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 readOnly: true,
                 style: TextStyle(fontSize: 45),
                 textAlign: TextAlign.right,
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                ),
+                decoration: InputDecoration(border: InputBorder.none),
               ),
             ),
           ),
